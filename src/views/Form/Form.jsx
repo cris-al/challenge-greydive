@@ -2,8 +2,10 @@ import { Title, Input, FormStyled, Label, InputContainer, CheckContainer, Paragr
  Button, ButtonContainer, MainContainer, Error } from "./styles/FormStyles";
 import CustomSelect from "./components/Select/Select";
 import { useForm } from "./hook/useForm";
+import LoadingButton from "../../components/LoadingButton/LoadingButton";
+
 export default function Form(){
-    const { sel, check, submitButton, inputs, formik } = useForm();
+    const { sel, check, submitButton, inputs, formik, sendLoading } = useForm();
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = formik;
 
     return(
@@ -33,10 +35,12 @@ export default function Form(){
                             onChange={handleChange}/>
                         <Label>{check?.label}</Label>
                     </CheckContainer>
-                    { errors[check?.name] && <Error>{errors[check?.name]}</Error>}
+                    { touched[check?.name] && errors[check?.name] && <Error>{errors[check?.name]}</Error>}
                 </div>
                 <ButtonContainer>
-                    <Button type={submitButton?.type}>{submitButton?.label}</Button>
+                    <Button type={submitButton?.type}>
+                        { sendLoading ? <LoadingButton /> : submitButton?.label}
+                    </Button>
                 </ButtonContainer>
             </FormStyled>
         </MainContainer>

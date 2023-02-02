@@ -113,10 +113,14 @@ export const CheckContainer = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
     width: 100%;
 `;
 
 export const Button = styled.button`
+    display: flex;
+    justify-content: center;
     border: none;
     border-radius: 3px;
     width: 60%;
