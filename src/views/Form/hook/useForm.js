@@ -32,7 +32,7 @@ export const useForm = () => {
                     setSendLoading(true);
                     addDoc(collection(db, "encuestas"), { ...formik.values })
                     .then(data => {
-                        clearFields(formik.setFieldValue, formik.setTouched);
+                        clearFields(formik.setFieldValue);
                         Swal.fire({
                             icon: "success",
                             title: "Tus respuestas han sido enviadas",

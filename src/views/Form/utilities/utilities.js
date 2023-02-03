@@ -26,15 +26,8 @@ export const validationSchema = Yup.object().shape({
     terms_and_conditions: Yup.boolean().oneOf([true], "Debe aceptar los terminos y condiciones").required(messageReq)
 });
 
-export const clearFields = (setFields, setTouched) => {
+export const clearFields = (setFields) => {
     setFields("full_name", "");
     setFields("email", "");
     setFields("birth_date", "");
-    setFields("country_of_origin", "");
-    setFields("terms_and_conditions", "");
-    setTouched("full_name", false);
-    setTouched("email", false);
-    setTouched("birth_date", false);
-    setTouched("country_of_origin", false);
-    setTouched("terms_and_conditions", false);
 }
