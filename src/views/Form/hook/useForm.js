@@ -16,6 +16,7 @@ export const useForm = () => {
     const [submitButton, setSubmitButton] = useState();
     const [inputs, setInputs] = useState();
     const [sendLoading, setSendLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const onSubmit = () => {
         try {
@@ -78,9 +79,12 @@ export const useForm = () => {
             }
             setInputs(arr);
         }
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
     }, []);
 
     const formik = useFormik({ initialValues, validationSchema, onSubmit });
 
-    return { sel, check, inputs, submitButton, formik, sendLoading };
+    return { sel, check, inputs, submitButton, formik, sendLoading, loading };
 }
