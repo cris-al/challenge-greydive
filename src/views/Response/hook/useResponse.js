@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getDoc, doc, getFirestore } from "firebase/firestore";
 import { firebaseApp } from "../../../firebase";
 import Swal from "sweetalert2";
@@ -9,11 +9,15 @@ const db = getFirestore(firebaseApp);
 export const useResponse = () => {
     const { id } = useParams();
     const [responses, setResponses] = useState();
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/");
+    }
 
     useEffect(() => {
         try {
-            setLoading(true);
             getDoc(doc(db, "encuestas", id))
             .then(res => {
                 if(res.exists()) setResponses(res.data());
@@ -47,5 +51,5 @@ export const useResponse = () => {
         }
     }, []);
 
-    return { responses, loading };
+    return { responses, loading, handleClick };
 }

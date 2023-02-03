@@ -8,9 +8,9 @@ export const TitleSkeleton = () => {
     );
 };
 
-export const LabelSkeleton = () => {
+export const LabelSkeleton = ({style}) => {
     return(
-        <label className="label-skeleton"></label>
+        <label className="label-skeleton" style={style}></label>
     );
 };
 

@@ -13,6 +13,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 1rem;
     margin-bottom: 3.5rem;
     @media (min-width: 576px) {
@@ -26,9 +27,8 @@ export const Container = styled.div`
 export const Div = styled.div`
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem;
+    width: 100%;
     border-radius: 3px;
-    gap: 1rem;
     background-color: #1e88e5;
     box-shadow: 0 0 8px #616161;
     transition: 0.5s;
@@ -36,14 +36,13 @@ export const Div = styled.div`
         background-color: #42a5f5;
     }
     @media (min-width: 375px) {
-        padding: 1.5rem;
+        width: 90%;
     }
     @media (min-width: 576px) {
         width: 500px;
     }
     @media (min-width: 768px) {
         width: 650px;
-        padding: 3rem 2rem;
     }
     @media (min-width: 992px) {
         width: 750px;
@@ -86,5 +85,18 @@ export const Button = styled.button`
     }
     @media (min-width: 992px) {
         font-size: 1.2rem;
+    }
+`;
+
+export const Cont = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    @media (min-width: 576px) {
+        padding: 2rem 1.5rem;
+    }
+    @media (min-width: 768px) {
+        padding: 3rem 2rem;
     }
 `;

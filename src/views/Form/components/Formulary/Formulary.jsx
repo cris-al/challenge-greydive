@@ -20,7 +20,7 @@ export default function Formulary({inputs, sel, check, submitButton, sendLoading
                     <Label>{sel?.label}:</Label>
                     <CustomSelect name={sel?.name} options={sel?.options}
                         handleChange={handleChange} handleBlur={handleBlur}/>
-                    { errors[sel?.name] && <Error>{errors[sel?.name]}</Error>}
+                    { touched[sel?.name] && errors[sel?.name] && <Error>{errors[sel?.name]}</Error>}
                 </InputContainer>
                 <div>
                     <Paragraph>Leer términos y condiciones</Paragraph>

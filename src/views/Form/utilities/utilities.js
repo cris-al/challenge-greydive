@@ -22,8 +22,8 @@ export const validationSchema = Yup.object().shape({
     full_name: Yup.string().required(messageReq),
     email: Yup.string().email("Debe ser un email valido").required(messageReq),
     birth_date: Yup.date().transform(parseDateString).max(maxDate, "Debe tener almenos 15 años").required(messageReq),
-    country_of_origin: Yup.string().oneOf(countries, "Debe seleccionar un país"),
-    terms_and_conditions: Yup.boolean().oneOf([true], "Debe aceptar los terminos y condiciones")
+    country_of_origin: Yup.string().oneOf(countries, "Debe seleccionar un país").required(messageReq),
+    terms_and_conditions: Yup.boolean().oneOf([true], "Debe aceptar los terminos y condiciones").required(messageReq)
 });
 
 export const clearFields = (setFields, setTouched) => {
