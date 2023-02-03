@@ -90,7 +90,7 @@ Para el formulario controlado se uso: [formik](https://formik.org/docs/overview)
 
 Para el ruteo se uso: [react-router-dom](https://reactrouter.com/en/main)
 
-Para la coneccion con firebase se uso: [firebase](https://firebase.google.com/docs)
+Para la conexión con firebase se uso: [firebase](https://firebase.google.com/docs)
 
 Para las alertas se uso: [sweetalert2](https://sweetalert2.github.io/)
 
@@ -99,10 +99,15 @@ Para las alertas se uso: [sweetalert2](https://sweetalert2.github.io/)
 Para el archivo .env agregar las siguentes variables con los valores de las credenciales de firebase:
 
 REACT_APP_API_KEY=
+
 REACT_APP_AUTH_DOMAIN=
+
 REACT_APP_PROJECT_ID=
+
 REACT_APP_STORAGE_BUCKET=
+
 REACT_APP_MESSAGING_SENDER_ID=
+
 REACT_APP_APP_ID=
 
 
